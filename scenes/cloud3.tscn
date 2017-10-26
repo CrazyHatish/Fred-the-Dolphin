@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://assets/new/clouds/clouds (1).png" type="Texture" id=1]
+
+[node name="cloud3" type="Sprite"]
+
+visibility/blend_mode = 4
+transform/pos = Vector2( -6.10352e-05, -1.50732 )
+texture = ExtResource( 1 )
+
+

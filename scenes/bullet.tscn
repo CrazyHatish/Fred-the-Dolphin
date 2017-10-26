@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://scripts/bullet.gd" type="Script" id=1]
+[ext_resource path="res://assets/new/bullet.png" type="Texture" id=2]
+
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 14.728
+height = 1.72176
+
+[node name="bullet" type="KinematicBody2D"]
+
+transform/pos = Vector2( -2000, 0 )
+z/relative = false
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( -4.14359e-08, 0.947944, -0.923758, -4.03787e-08, -1.64722, -0.51295 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 10
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+visibility/light_mask = 0
+transform/pos = Vector2( -1.64722, -0.51295 )
+transform/rot = -90.0
+transform/scale = Vector2( 0.947944, 0.923758 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+

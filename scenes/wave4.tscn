@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/heli.tscn" type="PackedScene" id=1]
+
+[node name="wave" type="Node2D"]
+
+[node name="heli1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 4.05042, -265.857 )
+
+[node name="heli2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 24.2331, 275.06 )
+
+[node name="heli" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 120.42, 0 )
+type = 1
+
+
