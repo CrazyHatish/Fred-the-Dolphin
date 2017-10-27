@@ -187,6 +187,7 @@
 			<label><input id="lock-cursor" type="checkbox" autocomplete="off" />lock cursor</label>
 			<label><input id="resize-canvas" type="checkbox" autocomplete="off" />resize canvas</label>
 			-->
+			<button id="fullscreen" class="godot" type="button" disabled="disabled" autocomplete="off" onclick="Presentation.goFullscreen();">fullscreen</button>
 		</div>
 	</div>
 	<!-- Firefox adds extra space to textarea, but shouldn't matter too much https://bugzilla.mozilla.org/show_bug.cgi?id=33654 -->
@@ -339,7 +340,7 @@
 			})();
 
 			return {
-				TOTAL_MEMORY: 33554432,
+				TOTAL_MEMORY: 268435456,
 				preRun: [],
 				postRun: postRun,
 				print: print,

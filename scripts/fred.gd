@@ -14,13 +14,13 @@ func _fixed_process(delta):
 	if Input.is_action_pressed("up"):
 		acc.y += fly
 		pack_start(get_node("fire"))
+		get_node("fred").set_frame(0)
 		
 	else:
 		pack_stop(get_node("fire"))
+		get_node("fred").set_frame(1)
 
 	speed += acc * delta
-	
-	get_node("fred").set_frame(1 + int(speed.y/200))
 	
 	move(speed * delta)
 	

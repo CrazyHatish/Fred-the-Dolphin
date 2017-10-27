@@ -1,119 +1,112 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=31 format=1]
 
 [ext_resource path="res://scripts/fred.gd" type="Script" id=1]
 [ext_resource path="res://assets/new/fred/fred/l0_up_3.png" type="Texture" id=2]
 [ext_resource path="res://assets/new/fred/fred/l0_up_2.png" type="Texture" id=3]
-[ext_resource path="res://assets/new/fred/fred/l0_up_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/new/fred/hands/l1_shoot_1.png" type="Texture" id=4]
 [ext_resource path="res://assets/new/fred/hands/l1_shoot_2.png" type="Texture" id=5]
 [ext_resource path="res://assets/new/fred/hands/l1_shoot_3.png" type="Texture" id=6]
-[ext_resource path="res://assets/new/fred/hands/l1_shoot_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_1.png" type="Texture" id=8]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_2.png" type="Texture" id=9]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_3.png" type="Texture" id=10]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_4.png" type="Texture" id=11]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_1.png" type="Texture" id=12]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_2.png" type="Texture" id=13]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_3.png" type="Texture" id=14]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_4.png" type="Texture" id=15]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_5.png" type="Texture" id=16]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_6.png" type="Texture" id=17]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_7.png" type="Texture" id=18]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_5.png" type="Texture" id=11]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_6.png" type="Texture" id=12]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_7.png" type="Texture" id=13]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_3.png" type="Texture" id=16]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_4.png" type="Texture" id=17]
 
-
-[sub_resource type="ConvexPolygonShape2D" id=22]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -61.2314, -62.2418, -85.5546, -63.3951, -58.5906, -81.6074, -35.8415, -83.9288 )
 
-[sub_resource type="ConvexPolygonShape2D" id=23]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 38.1878, -36.9175, 60.8829, -20.7067, 52.7776, -12.0609, 13.8716, -9.35915, 26.2999, -37.9982 )
 
-[sub_resource type="ConvexPolygonShape2D" id=24]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -3.12146, 50.4967, 34.0002, 53.4903, 54.3573, 79.8348, 37.5927, 101.389, 28.0128, 110.969, 7.22, 125.935, -36.052, 109.173, -42.6381, 90.0133 )
 
-[sub_resource type="ConvexPolygonShape2D" id=25]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -6.01166, 136.226, -31.8608, 133.122, -36.052, 109.173, 7.22, 125.935 )
 
-[sub_resource type="ConvexPolygonShape2D" id=26]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -3.12146, 50.4967, 28.0128, 45.108, 34.0002, 53.4903 )
 
-[sub_resource type="ConvexPolygonShape2D" id=27]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -3.12146, 50.4967, -42.6381, 90.0133, -60.1577, 43.5961, -13.1464, 41.9751 )
 
-[sub_resource type="ConvexPolygonShape2D" id=28]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -13.1464, 41.9751, -60.1577, 43.5961, -59.6173, -53.1283, -12.0656, 24.1432 )
 
-[sub_resource type="ConvexPolygonShape2D" id=29]
+[sub_resource type="ConvexPolygonShape2D" id=8]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 26.2999, -52.5879, 26.2999, -37.9982, 13.8716, -9.35915, -12.0656, 24.1432, -59.6173, -53.1283, -61.2314, -62.2418, -35.8415, -83.9288 )
 
-[sub_resource type="ConvexPolygonShape2D" id=30]
+[sub_resource type="ConvexPolygonShape2D" id=9]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 44.6721, -70.4198, 26.2999, -52.5879, -35.8415, -83.9288, 4.14514, -124.996, 39.8089, -124.456, 54.3986, -112.028, 65.2058, -102.301 )
 
-[sub_resource type="ConvexPolygonShape2D" id=31]
+[sub_resource type="ConvexPolygonShape2D" id=10]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 82.4973, -70.4198, 44.6721, -70.4198, 65.2058, -102.301, 90.0624, -93.1149, 92.2238, -77.4445 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=11]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": false,
 "name": "down",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": false,
-"name": "up",
-"speed": 12.0
 } ]
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=12]
 
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "shoot",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "shoot",
+"speed": 10.0
 } ]
 
-[sub_resource type="SpriteFrames" id=21]
+[sub_resource type="SpriteFrames" id=13]
 
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "fire_idle",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": false,
 "name": "pack_start",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ), null ],
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), null ],
 "loop": false,
 "name": "pack_stop",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "fire_idle",
 "speed": 20.0
 } ]
 
@@ -121,34 +114,34 @@ animations = [ {
 
 visibility/behind_parent = true
 input/pickable = false
-shapes/0/shape = SubResource( 22 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 23 )
+shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 24 )
+shapes/2/shape = SubResource( 3 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 25 )
+shapes/3/shape = SubResource( 4 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 26 )
+shapes/4/shape = SubResource( 5 )
 shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/4/trigger = false
-shapes/5/shape = SubResource( 27 )
+shapes/5/shape = SubResource( 6 )
 shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/5/trigger = false
-shapes/6/shape = SubResource( 28 )
+shapes/6/shape = SubResource( 7 )
 shapes/6/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/6/trigger = false
-shapes/7/shape = SubResource( 29 )
+shapes/7/shape = SubResource( 8 )
 shapes/7/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/7/trigger = false
-shapes/8/shape = SubResource( 30 )
+shapes/8/shape = SubResource( 9 )
 shapes/8/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/8/trigger = false
-shapes/9/shape = SubResource( 31 )
+shapes/9/shape = SubResource( 10 )
 shapes/9/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/9/trigger = false
 collision/layers = 4
@@ -166,7 +159,7 @@ trigger = false
 [node name="fred" type="AnimatedSprite" parent="."]
 
 visibility/light_mask = 0
-frames = SubResource( 10 )
+frames = SubResource( 11 )
 animation = "down"
 frame = 1
 
@@ -174,13 +167,13 @@ frame = 1
 
 visibility/blend_mode = 4
 transform/pos = Vector2( 0, -0.59874 )
-frames = SubResource( 20 )
+frames = SubResource( 12 )
 animation = "default"
 
 [node name="fire" type="AnimatedSprite" parent="."]
 
 visibility/blend_mode = 4
-frames = SubResource( 21 )
+frames = SubResource( 13 )
 animation = "pack_stop"
 frame = 5
 
