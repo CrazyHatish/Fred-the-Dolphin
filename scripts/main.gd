@@ -20,7 +20,7 @@ func _fixed_process(delta):
 		
 	if (Input.is_action_pressed("shoot") and !curr_cd):
 		var node = bullet.instance()
-		add_child(node)
+		get_node("bullets").add_child(node)
 		curr_cd = cd
 		get_node("fred/hand").play("shoot")
 		get_node("fred/hand").set_frame(0)

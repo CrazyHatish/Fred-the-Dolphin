@@ -1,24 +1,24 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
-[ext_resource path="res://scenes/cloud_factory.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/fred.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/factory.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/fred.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/factory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/clouds.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
 font/size = 60
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 5 )
+font/font = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 
 font/size = 350
 font/use_mipmaps = false
 font/use_filter = false
-font/font = ExtResource( 5 )
+font/font = ExtResource( 4 )
 
 [sub_resource type="GDScript" id=3]
 
@@ -26,12 +26,13 @@ script/source = "extends Label
 
 var paused = false
 var pressed = false
+var frames = 0
 
 func _ready():
 	set_hidden(true)
-	set_process(true)
+	set_fixed_process(true)
 
-func _process(delta):
+func _fixed_process(delta):
 	
 	if (Input.is_action_pressed(\"ui_cancel\") && !pressed):
 		paused = !paused
@@ -42,25 +43,49 @@ func _process(delta):
 	if paused:
 		get_parent().get_tree().set_pause(true)
 		set_hidden(false)
+		frames += 1
+		if frames < 40:
+			set_hidden(false)
+		if frames > 40:
+			set_hidden(true)
+			
+		if frames == 60:
+			frames = 0
 	else:
+		frames = 0
 		get_parent().get_tree().set_pause(false)
 		set_hidden(true)"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends ParallaxLayer
+
+const speed = 100
+
+func _ready():
+	set_process(true)
+	
+func _process(delta):
+	var texture = get_node(\"TextureFrame\").get_texture().get_width() * 2
+	if get_pos().x < -texture * 0.75:
+		set_pos(Vector2(-texture * 0.25, 0))
+	
+	move_local_x(-speed * delta)"
 
 [node name="main" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
-[node name="cloud_factory" parent="." instance=ExtResource( 2 )]
-
-process/pause_mode = 1
-transform/pos = Vector2( 1553, 5 )
-
-[node name="fred" parent="." instance=ExtResource( 3 )]
+[node name="fred" parent="." instance=ExtResource( 2 )]
 
 process/pause_mode = 1
 transform/pos = Vector2( 162.008, 349.068 )
 
-[node name="factory" parent="." instance=ExtResource( 4 )]
+[node name="bullets" type="Node2D" parent="."]
+
+[node name="bullets1" type="Node2D" parent="."]
+
+[node name="factory" parent="." instance=ExtResource( 3 )]
 
 process/pause_mode = 1
 transform/pos = Vector2( 1530.76, 352.956 )
@@ -84,7 +109,8 @@ custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
-custom_constants/shadow_offset_y = 3
+custom_constants/shadow_offset_y = 5
+custom_constants/shadow_as_outline = 1
 text = "0"
 align = 1
 valign = 1
@@ -105,7 +131,10 @@ margin/right = 1282.0
 margin/bottom = 722.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 16
+custom_constants/shadow_offset_x = 10
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 10
+custom_constants/shadow_as_outline = 3
 text = "PAUSED"
 align = 1
 valign = 1
@@ -113,5 +142,39 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script/script = SubResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+visibility/blend_mode = 4
+motion/scale = Vector2( 1, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 4800, 0 )
+script/script = SubResource( 4 )
+
+[node name="TextureFrame" type="TextureFrame" parent="ParallaxBackground/ParallaxLayer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 4800.0
+margin/bottom = 720.0
+texture = ExtResource( 5 )
 
 

@@ -6,6 +6,7 @@ var gravity = 0
 var direction = [-1, 1]
 var loc = 0
 var dead = false
+var main
 
 func _on_heli_body_enter(body):
 	if 'bullets' in body.get_groups():
@@ -16,22 +17,22 @@ func _on_heli_body_enter(body):
 		get_node("body").set_layer_mask(0)
 		get_node("blades").set_layer_mask(0)
 		if type == 1:
-			get_node("/root/main").get_tree().change_scene("res://scenes/menu.tscn")
+			main.get_tree().change_scene("res://scenes/menu.tscn")
 		elif !dead:
-			get_node("/root/main").increment_score(50 + type * 50)
+			main.increment_score(50 + type * 50)
 			
 	if body.get_name() == 'fred':
-		get_node("/root/main").get_tree().change_scene("res://scenes/menu.tscn")
+		main.get_tree().change_scene("res://scenes/menu.tscn")
 		
 func _on_blades_body_enter(body):
 	if 'bullets' in body.get_groups():
 		body.queue_free()
 		if !dead:
-			get_node("/root/main").increment_score(2*(50 + type * 50))
+			main.increment_score(2*(50 + type * 50))
 		dead = true
 	
 	if body.get_name() == 'fred':
-		get_node("/root/main").get_tree().change_scene("res://scenes/menu.tscn")
+		main.get_tree().change_scene("res://scenes/menu.tscn")
 
 func _ready():
 	randomize()
@@ -42,6 +43,7 @@ func _ready():
 	if type == 1:
 		get_node("AnimatedSprite").set_animation("bad")
 	add_to_group("enemies")
+	main = get_node("/root/main")
 	
 func _fixed_process(delta):
 	

@@ -6,7 +6,7 @@ var screen_size
 
 func _ready():
 	screen_size = get_viewport_rect().size
-	set_pos(get_parent().get_node("fred").get_pos() + Vector2(112, -32))
+	set_pos(get_node("/root/main/fred").get_pos() + Vector2(112, -32))
 	set_fixed_process(true)
 	add_to_group("bullets")
 	
