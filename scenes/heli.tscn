@@ -5,19 +5,19 @@
 [ext_resource path="res://assets/new/heli/sprite_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/new/heli/sprite_2.png" type="Texture" id=4]
 [ext_resource path="res://assets/new/heli/sprite_3.png" type="Texture" id=5]
-[ext_resource path="res://assets/new/heli/blade_0.png" type="Texture" id=6]
-[ext_resource path="res://assets/new/heli/blade_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/new/heli/blade_2.png" type="Texture" id=8]
-[ext_resource path="res://assets/new/heli/blade_3.png" type="Texture" id=9]
-[ext_resource path="res://assets/new/heli/blade_4.png" type="Texture" id=10]
-[ext_resource path="res://assets/new/bad_heli/blade_0.png" type="Texture" id=11]
-[ext_resource path="res://assets/new/bad_heli/blade_1.png" type="Texture" id=12]
-[ext_resource path="res://assets/new/bad_heli/blade_2.png" type="Texture" id=13]
-[ext_resource path="res://assets/new/bad_heli/blade_3.png" type="Texture" id=14]
-[ext_resource path="res://assets/new/bad_heli/blade_4.png" type="Texture" id=15]
-[ext_resource path="res://assets/new/bad_heli/sprite_1.png" type="Texture" id=16]
-[ext_resource path="res://assets/new/bad_heli/sprite_2.png" type="Texture" id=17]
-[ext_resource path="res://assets/new/bad_heli/sprite_3.png" type="Texture" id=18]
+[ext_resource path="res://assets/new/bad_heli/blade_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/new/bad_heli/blade_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/new/bad_heli/blade_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/new/bad_heli/blade_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/new/bad_heli/blade_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/new/bad_heli/sprite_1.png" type="Texture" id=11]
+[ext_resource path="res://assets/new/bad_heli/sprite_2.png" type="Texture" id=12]
+[ext_resource path="res://assets/new/bad_heli/sprite_3.png" type="Texture" id=13]
+[ext_resource path="res://assets/new/heli/blade_0.png" type="Texture" id=14]
+[ext_resource path="res://assets/new/heli/blade_1.png" type="Texture" id=15]
+[ext_resource path="res://assets/new/heli/blade_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/new/heli/blade_3.png" type="Texture" id=17]
+[ext_resource path="res://assets/new/heli/blade_4.png" type="Texture" id=18]
 [ext_resource path="res://assets/new/bad_heli/sprite_0.png" type="Texture" id=19]
 [ext_resource path="res://assets/new/explosion/sprite_0.png" type="Texture" id=20]
 [ext_resource path="res://assets/new/explosion/sprite_1.png" type="Texture" id=21]
@@ -25,7 +25,6 @@
 [ext_resource path="res://assets/new/explosion/sprite_3.png" type="Texture" id=23]
 [ext_resource path="res://assets/new/explosion/sprite_4.png" type="Texture" id=24]
 [ext_resource path="res://assets/new/explosion/sprite_5.png" type="Texture" id=25]
-
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -35,17 +34,17 @@ animations = [ {
 "name": "default",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "blade",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "bad_blade",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "blade",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "bad",
 "speed": 12.0
@@ -102,6 +101,7 @@ type = 0
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="explosion" type="AnimatedSprite" parent="."]
