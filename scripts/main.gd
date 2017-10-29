@@ -5,11 +5,14 @@ var screen_size
 var score = 0
 var bullet
 var curr_cd = 0
+var highscore 
 
 func _ready():
 	bullet = load("res://scenes/bullet.tscn")
 	set_fixed_process(true)
 	screen_size = get_viewport_rect().size
+	highscore = get_node("/root/global").read_savegame()
+	get_node("highscore/highscore").set_text(str(highscore))
 	
 func _fixed_process(delta):
 	
@@ -29,4 +32,8 @@ func _fixed_process(delta):
 	
 func increment_score(amount):
 	score += amount
-	get_node("score").set_text(str(score))
+	get_node("score/score").set_text(str(score))
+	if score > highscore:
+		highscore = score
+		get_node("highscore/highscore").set_text(str(highscore))
+		get_node("/root/global").save(highscore)

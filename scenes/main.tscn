@@ -1,26 +1,36 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fred.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/factory.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/clouds.png" type="Texture" id=5]
+[ext_resource path="res://assets/Early GameBoy.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/clouds.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 60
+font/size = 55
+extra_spacing/char = -7
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 
-font/size = 350
+font/size = 55
+extra_spacing/char = -7
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 4 )
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="DynamicFont" id=3]
+
+font/size = 350
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 5 )
+
+[sub_resource type="GDScript" id=4]
 
 script/source = "extends Label
 
@@ -56,7 +66,7 @@ func _fixed_process(delta):
 		get_parent().get_tree().set_pause(false)
 		set_hidden(true)"
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=5]
 
 script/source = "extends ParallaxLayer
 
@@ -88,7 +98,18 @@ transform/pos = Vector2( 162.008, 349.068 )
 process/pause_mode = 1
 transform/pos = Vector2( 1530.76, 352.956 )
 
-[node name="score" type="Label" parent="."]
+[node name="score" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 243.0
+margin/top = -1.0
+margin/right = 283.0
+margin/bottom = 39.0
+
+[node name="score" type="Label" parent="score"]
 
 process/pause_mode = 1
 anchor/left = 3
@@ -99,17 +120,96 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 31.0
-margin/top = 36.0
-margin/right = -1246.0
-margin/bottom = -84.0
+margin/left = -372.0
+margin/top = -2.0
+margin/right = -1013.0
+margin/bottom = -122.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 1
 text = "0"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="score"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 569.0
+margin/top = -3.0
+margin/right = 844.0
+margin/bottom = 66.0
+custom_fonts/font = SubResource( 2 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 1
+text = "SCORE"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="highscore" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 243.0
+margin/top = -1.0
+margin/right = 283.0
+margin/bottom = 39.0
+
+[node name="highscore" type="Label" parent="highscore"]
+
+process/pause_mode = 1
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 262.0
+margin/top = -2.0
+margin/right = -386.0
+margin/bottom = -122.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 1
+text = "0"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="highscore"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -172.0
+margin/top = -4.0
+margin/right = 324.0
+margin/bottom = 65.0
+custom_fonts/font = SubResource( 2 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 1
+text = "HIGHSCORE"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -127,11 +227,11 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 1282.0
 margin/bottom = 722.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 10
+custom_constants/shadow_offset_x = 8
 custom_constants/line_spacing = 0
-custom_constants/shadow_offset_y = 10
+custom_constants/shadow_offset_y = 8
 custom_constants/shadow_as_outline = 3
 text = "PAUSED"
 align = 1
@@ -139,7 +239,7 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 3 )
+script/script = SubResource( 4 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -160,7 +260,7 @@ visibility/blend_mode = 4
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 4800, 0 )
-script/script = SubResource( 4 )
+script/script = SubResource( 5 )
 
 [node name="TextureFrame" type="TextureFrame" parent="ParallaxBackground/ParallaxLayer"]
 
@@ -172,7 +272,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 4800.0
 margin/bottom = 720.0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 stretch_mode = 0
 
 

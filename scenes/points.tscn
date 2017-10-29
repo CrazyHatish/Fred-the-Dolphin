@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/Early GameBoy.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
 
-font/size = 60
+font/size = 55
+extra_spacing/char = -7
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 1 )
@@ -54,7 +55,6 @@ margin/top = -89.0
 margin/right = 106.0
 margin/bottom = -36.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 1
