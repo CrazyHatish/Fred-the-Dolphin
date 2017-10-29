@@ -180,13 +180,14 @@
 		</canvas>
 		<div id="status-container">
 			<span id="status" class="godot" onclick="this.style.visibility='hidden';">Loading page...</span>
-			<div id="controls" class="godot">
-				<!-- hidden until implemented
-				<label id="display-output"><input id="output-toggle" type="checkbox" autocomplete="off" onchange="Presentation.setOutputVisible(this.checked);" />display output</label>
-				<label><input id="lock-cursor" type="checkbox" autocomplete="off" />lock cursor</label>
-				<label><input id="resize-canvas" type="checkbox" autocomplete="off" />resize canvas</label>
-			<button id="fullscreen" class="godot" type="button" disabled="disabled" autocomplete="off" onclick="Presentation.goFullscreen();">fullscreen</button>-->
-			</div>
+		</div>
+		<div id="controls" class="godot">
+			<label id="display-output"><input id="output-toggle" type="checkbox" autocomplete="off" onchange="Presentation.setOutputVisible(this.checked);" />display output</label>
+			<!-- hidden until implemented
+			<label><input id="lock-cursor" type="checkbox" autocomplete="off" />lock cursor</label>
+			<label><input id="resize-canvas" type="checkbox" autocomplete="off" />resize canvas</label>
+			-->
+			<button id="fullscreen" class="godot" type="button" disabled="disabled" autocomplete="off" onclick="Presentation.goFullscreen();">fullscreen</button>
 		</div>
 	</div>
 	<!-- Firefox adds extra space to textarea, but shouldn't matter too much https://bugzilla.mozilla.org/show_bug.cgi?id=33654 -->
@@ -365,15 +366,15 @@
 		Presentation.setStatus("Downloading...");
 
 	//]]></script>
-	<script type="text/javascript" src="fredfs.js"></script>
+	<script type="text/javascript" src="indexfs.js"></script>
 	<script>
 		(function() {
 			var script = document.createElement('script');
-			script.src = "fred.asm.js";
+			script.src = "index.asm.js";
 			script.onload = function() {
 				setTimeout(function() {
 					(function() {
-						var memoryInitializer = 'fred.mem';
+						var memoryInitializer = 'index.mem';
 						if (typeof Module.locateFile === 'function') {
 							memoryInitializer = Module.locateFile(memoryInitializer);
 						} else if (Module.memoryInitializerPrefixURL) {
@@ -386,7 +387,7 @@
 					})();
 
 					var script = document.createElement('script');
-					script.src = "fred.js";
+					script.src = "index.js";
 					document.body.appendChild(script);
 				}, 1); // delaying even 1ms is enough to allow compilation memory to be reclaimed
 			};
