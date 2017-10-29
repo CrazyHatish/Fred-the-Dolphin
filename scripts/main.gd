@@ -30,4 +30,3 @@ func _fixed_process(delta):
 func increment_score(amount):
 	score += amount
 	get_node("score").set_text(str(score))
-	

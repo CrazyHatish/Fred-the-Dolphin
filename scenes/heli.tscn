@@ -53,7 +53,7 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ null, ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ null, ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), null ],
 "loop": false,
 "name": "default",
 "speed": 20.0
@@ -101,7 +101,7 @@ type = 0
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 
 [node name="explosion" type="AnimatedSprite" parent="."]

@@ -99,15 +99,15 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 29.0
-margin/top = 31.0
-margin/right = -1248.0
-margin/bottom = -89.0
+margin/left = 31.0
+margin/top = 36.0
+margin/right = -1246.0
+margin/bottom = -84.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 4
-custom_constants/shadow_offset_y = 4
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 1
 text = "0"
 align = 1
@@ -143,7 +143,6 @@ script/script = SubResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -174,5 +173,6 @@ margin/top = 0.0
 margin/right = 4800.0
 margin/bottom = 720.0
 texture = ExtResource( 5 )
+stretch_mode = 0
 
 
