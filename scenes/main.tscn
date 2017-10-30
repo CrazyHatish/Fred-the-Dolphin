@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fred.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Early GameBoy.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/clouds.png" type="Texture" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -81,6 +82,23 @@ func _process(delta):
 		set_pos(Vector2(-texture * 0.25, 0))
 	
 	move_local_x(-speed * delta)"
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends TouchScreenButton
+
+func _on_fly_pressed():
+	Input.action_press(\"up\")
+
+func _on_fly_released():
+	Input.action_release(\"up\")
+
+func _on_shoot_pressed():
+	Input.action_press(\"shoot\")
+
+func _on_shoot_released():
+	Input.action_release(\"shoot\")
+"
 
 [node name="main" type="Node2D"]
 
@@ -274,5 +292,45 @@ margin/right = 4800.0
 margin/bottom = 720.0
 texture = ExtResource( 6 )
 stretch_mode = 0
+
+[node name="fly" type="TouchScreenButton" parent="."]
+
+visibility/opacity = 0.0
+transform/pos = Vector2( -6.05399, -1.72125 )
+transform/scale = Vector2( 2.51191, 2.83175 )
+normal = ExtResource( 7 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+script/script = SubResource( 6 )
+
+[node name="shoot" type="TouchScreenButton" parent="."]
+
+visibility/opacity = 0.0
+transform/pos = Vector2( 644.546, -1.72125 )
+transform/scale = Vector2( 2.46836, 2.83175 )
+normal = ExtResource( 7 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+script/script = SubResource( 6 )
+
+[connection signal="pressed" from="fly" to="fly" method="_on_fly_pressed"]
+
+[connection signal="released" from="fly" to="fly" method="_on_fly_released"]
+
+[connection signal="pressed" from="shoot" to="fly" method="_on_shoot_pressed"]
+
+[connection signal="released" from="shoot" to="fly" method="_on_shoot_released"]
 
 
