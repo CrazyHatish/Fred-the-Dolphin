@@ -6,17 +6,17 @@
 [ext_resource path="res://assets/new/fred/hands/l1_shoot_1.png" type="Texture" id=4]
 [ext_resource path="res://assets/new/fred/hands/l1_shoot_2.png" type="Texture" id=5]
 [ext_resource path="res://assets/new/fred/hands/l1_shoot_3.png" type="Texture" id=6]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_2.png" type="Texture" id=8]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_3.png" type="Texture" id=9]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_4.png" type="Texture" id=10]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_5.png" type="Texture" id=11]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_6.png" type="Texture" id=12]
-[ext_resource path="res://assets/new/fred/fire/l1_packstart_7.png" type="Texture" id=13]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_1.png" type="Texture" id=14]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_2.png" type="Texture" id=15]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_3.png" type="Texture" id=16]
-[ext_resource path="res://assets/new/fred/fire/l1_fireidle_4.png" type="Texture" id=17]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/new/fred/fire/l1_fireidle_4.png" type="Texture" id=10]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_6.png" type="Texture" id=11]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_5.png" type="Texture" id=12]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_4.png" type="Texture" id=13]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_3.png" type="Texture" id=14]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/new/fred/fire/l1_packstart_7.png" type="Texture" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -94,19 +94,19 @@ animations = [ {
 [sub_resource type="SpriteFrames" id=13]
 
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": false,
-"name": "pack_start",
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "fire_idle",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), null ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), null ],
 "loop": false,
 "name": "pack_stop",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "fire_idle",
+"frames": [ ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "pack_start",
 "speed": 20.0
 } ]
 
@@ -158,6 +158,7 @@ trigger = false
 
 [node name="fred" type="AnimatedSprite" parent="."]
 
+visibility/blend_mode = 4
 visibility/light_mask = 0
 frames = SubResource( 11 )
 animation = "down"

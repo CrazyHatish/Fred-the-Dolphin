@@ -20,6 +20,7 @@ func _fixed_process(delta):
 		
 	if (fred_pos > (screen_size.y + 100) or fred_pos < -100):
 		get_tree().change_scene("res://scenes/menu.tscn")
+		Input.action_release("up")
 		
 	if (Input.is_action_pressed("shoot") and !curr_cd):
 		var node = bullet.instance()

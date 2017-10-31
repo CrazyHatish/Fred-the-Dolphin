@@ -20,6 +20,7 @@ func _on_heli_body_enter(body):
 		get_node("blades").set_layer_mask(0)
 		if type == 1:
 			main.get_tree().change_scene("res://scenes/menu.tscn")
+			Input.action_release("up")
 		elif !dead:
 			main.increment_score(score)
 			var node = points.instance()
@@ -29,6 +30,7 @@ func _on_heli_body_enter(body):
 			
 	if body.get_name() == 'fred':
 		main.get_tree().change_scene("res://scenes/menu.tscn")
+		Input.action_release("up")
 		
 func _on_blades_body_enter(body):
 	if 'bullets' in body.get_groups():
@@ -42,6 +44,7 @@ func _on_blades_body_enter(body):
 	
 	if body.get_name() == 'fred':
 		main.get_tree().change_scene("res://scenes/menu.tscn")
+		Input.action_release("up")
 
 func _ready():
 	points = load("res://scenes/points.tscn")
